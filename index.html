@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWD Pay – Paiements et transferts instantanés en Afrique</title>
+  <!-- Bootstrap CSS and ICONS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand logo" href="#"><img src="assets/images/logo/logo.awdpay.png" alt="AWD Pay Logo" style="height:36px;vertical-align:middle;"> AWD Pay</a>
+                <button class="navbar-toggler orange-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto nav-links">
+                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tarifs">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                    <a href="https://www.awdpay.com/register" class="btn cta-nav ms-lg-3">Ouvrir un compte</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row align-items-center g-0 flex-lg-row flex-column-reverse hero-content">
+                <div class="col-lg-6 col-12 text-lg-start text-center d-flex flex-column justify-content-center align-items-lg-start align-items-center">
+                    <h1 class="mb-3 fw-bold">Effectuez vos transactions facilement, à moindre coût et en toute sécurité.</h1>
+                    <p class="subtitle mb-3">AWDpay se spécialise dans l’agrégation de moyens de paiement en ligne. Plateforme centralisée, accessible à tous, partout dans le monde.</p>
+                    <div class="cta-group mb-3 d-flex flex-wrap justify-content-lg-start justify-content-center gap-2">
+                        <a href="https://www.awdpay.com/register" class="cta-main">Commencer</a>
+                        <button class="cta-demo">Voir la démo</button>
+                    </div>
+                    <div class="trust-signals mb-3 d-flex flex-wrap align-items-center gap-2">
+                        <span class="badge">Certifié PCI DSS</span>
+                        <span class="badge founded">Fondée en 2020</span>
+                        <span class="partners d-flex align-items-center">
+                        <img src="assets/images/mtn-logo-png_seeklogo-503277.png" alt="MTN"/>
+                        <img src="assets/images/orange-logo-png_seeklogo-168289.png" alt="Orange"/>
+                        </span>
+                        <span class="stats">100 000+ utilisateurs</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex flex-column align-items-lg-start align-items-center mb-4 mb-lg-0">
+                    <div class="transaction-animation mb-3 w-100">
+                        <img src="https://www.awdpay.com/api/public/image-1642629810706-811855613.png" alt="AWD Hero" class="hero-img"/>
+                        <div class="money-transfer">
+                        <span class="circle sender"></span>
+                        <span class="arrow"></span>
+                        <span class="circle receiver"></span>
+                        </div>
+                    </div>
+                    <div class="simulator w-100">
+                        <label for="amount">Simulateur de frais :</label>
+                        <input type="number" id="amount" min="1" value="10000" />
+                        <span class="result" id="fee-result"> 200 XAF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Services AWD Pay -->
+    <section id="services" class="services-section py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-3">Des possibilités de paiement infinies pour chaque individu</h2>
+                    <p class="lead">AWD Pay propose une série de services intégrés pour particuliers et professionnels, garantissant des transactions fluides et une gestion efficace de votre argent.</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="assets/images/logo/logo.awdpay.png" alt="AWD Services" class="img-fluid service-hero-anim">
+                </div>
+            </div>
+            <div class="row g-4 service-cards">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 text-center p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp">
+                        <img src="assets/images/ser-depot.png" alt="Dépôt" class="mb-3" style="height:48px;">
+                        <h5 class="fw-bold mb-2">Dépôt</h5>
+                        <p class="mb-0">Déposez de l’argent sur votre compte et faites tous vos achats en ligne chez nos partenaires.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 text-center p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp" style="animation-delay:0.1s;">
+                        <img src="assets/images/ser-tarif.png" alt="Tarifs" class="mb-3" style="height:48px;">
+                        <h5 class="fw-bold mb-2">Tarifs</h5>
+                        <p class="mb-0">Pas de frais mensuels. Frais de transactions à partir de 2%.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 text-center p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp" style="animation-delay:0.2s;">
+                        <img src="assets/images/ser-collecte.png" alt="Collecte de fonds" class="mb-3" style="height:48px;">
+                        <h5 class="fw-bold mb-2">Collecte de fonds</h5>
+                        <p class="mb-0">Collectez des paiements auprès de vos clients à l’échelle mondiale, avec réversion rapide.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card h-100 text-center p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp" style="animation-delay:0.3s;">
+                        <img src="assets/images/ser-transfert.png" alt="Transfert" class="mb-3" style="height:48px;">
+                        <h5 class="fw-bold mb-2">Transfert instantané</h5>
+                        <p class="mb-0">Transférez facilement de l’argent à un utilisateur en 0.001 seconde.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Funfacts AWD Pay -->
+    <div id="fun-facts" class="fun-facts section overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="bi bi-cash-coin"></i>
+                        <div class="content">
+                            <!-- <span class="counter">3468</span> -->
+                            <p>Pas de frais mensuels</p>
+                        </div>
+                    </div>
+                    <!-- End Single Fun -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="bi bi-percent"></i>
+                        <div class="content">
+                            <!-- <span class="counter">557</span> -->
+                            <p>Frais à partir de <b>2%</b></p>
+                        </div>
+                    </div>
+                    <!-- End Single Fun -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="bi bi-shield-lock"></i>
+                        <div class="content">
+                            <!-- <span class="counter">4379</span> -->
+                            <p>Sécurité renforcée</p>
+                        </div>
+                    </div>
+                    <!-- End Single Fun -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="bi bi-lightning-charge"></i>
+                        <div class="content">
+                            <!-- <span class="counter">32</span> -->
+                            <p>Transfert instantané</p>
+                        </div>
+                    </div>
+                    <!-- End Single Fun -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Vision/Mission/Produit AWD Pay -->
+    <section id="vision-mission" class="py-5 bg-light position-relative">
+        <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="fw-bold text-center mb-4">Notre Vision & Mission</h2>
+                <div class="vision-card-stack position-relative">
+                    <div class="vision-card card-1 active">
+                        <span class="icon"><i class="bi bi-globe2"></i></span>
+                        <h4 class="fw-bold mb-2">Rendre les paiements en ligne accessibles à tous, partout dans le monde.</h4>
+                        <p class="mb-0">Notre vision première est de démocratiser l’accès aux paiements digitaux, pour tous les particuliers et professionnels d’Afrique et d’ailleurs.</p>
+                    </div>
+                    <div class="vision-card card-2">
+                        <span class="icon"><i class="bi bi-credit-card-2-front"></i></span>
+                        <h4 class="fw-bold mb-2">Une alternative aux paiements classiques</h4>
+                        <p class="mb-0">AWD Pay agit comme une alternative aux paiements par mobile ou carte bancaire, pour le e-commerce et d’autres usages commerciaux.</p>
+                    </div>
+                    <div class="vision-card card-3">
+                        <span class="icon"><i class="bi bi-rocket-takeoff"></i></span>
+                        <h4 class="fw-bold mb-2">Notre mission</h4>
+                        <p class="mb-0">Faciliter les opérations financières en ligne en offrant un service rapide, sécurisé et défiant toute concurrence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appel à l'action avant le footer -->
+    <section class="cta-before-footer my-5">
+        <h2 class="fw-bold mb-3">Prêt à rejoindre la révolution du paiement digital ?</h2>
+        <p class="lead mb-4">Ouvrez votre compte AWD Pay et profitez d'une expérience de paiement rapide, sécurisée et sans frontières.</p>
+        <a href="https://www.awdpay.com/register" class="cta-main">Créer mon compte gratuitement</a>
+    </section>
+
+    <!-- Footer enrichi -->
+    <footer class="footer-section bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+        <div class="row mb-4">
+            <!-- Bloc 1 : À propos -->
+            <div class="col-md-4 mb-4 mb-md-0">
+            <div class="footer-title">À propos d'AWD Pay</div>
+            <img src="assets/images/logo/logo.awdpay.png" alt="AWD Pay Logo" style="height:40px;">
+            <p class="mt-3">AWD Pay est la solution panafricaine pour des paiements digitaux rapides, sécurisés et accessibles à tous. Notre mission : simplifier la finance pour tous.</p>
+            <div class="social-icons mt-3">
+                <a href="https://www.facebook.com/awdpay" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://twitter.com/awdpay" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/awdpay" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+            </div>
+            <!-- Bloc 2 : Liens utiles -->
+            <div class="col-md-4 mb-4 mb-md-0">
+            <div class="footer-title">Liens utiles</div>
+            <ul class="list-unstyled">
+                <li><a href="#" class="text-white-50 text-decoration-none">Accueil</a></li>
+                <li><a href="#services" class="text-white-50 text-decoration-none">Services</a></li>
+                <li><a href="#tarifs" class="text-white-50 text-decoration-none">Tarifs</a></li>
+                <li><a href="#vision-mission" class="text-white-50 text-decoration-none">Vision & Mission</a></li>
+                <li><a href="#contact" class="text-white-50 text-decoration-none">Contact</a></li>
+            </ul>
+            </div>
+            <!-- Bloc 3 : Contact -->
+            <div class="col-md-4">
+            <div class="footer-title">Contactez-nous</div>
+            <form class="needs-validation" novalidate>
+                <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Votre nom" required>
+                </div>
+                <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Votre email" required>
+                </div>
+                <div class="mb-3">
+                <textarea class="form-control" rows="3" placeholder="Votre message" required></textarea>
+                </div>
+                <button type="submit" class="btn w-100">Envoyer</button>
+            </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+            <small class="text-white-50">&copy; 2025 AWD Pay. Tous droits réservés.</small>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
