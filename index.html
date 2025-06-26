@@ -265,7 +265,7 @@
                     <div class="single-fun">
                         <i class="bi bi-cash-coin"></i>
                         <div class="content">
-                            <!-- <span class="counter">3468</span> -->
+                            <span class="counter" data-count="3468"></span>
                             <p>Pas de frais mensuels</p>
                         </div>
                     </div>
@@ -276,7 +276,7 @@
                     <div class="single-fun">
                         <i class="bi bi-percent"></i>
                         <div class="content">
-                            <!-- <span class="counter">557</span> -->
+                            <span class="counter" data-count="557"></span>
                             <p>Frais à partir de <b>2%</b></p>
                         </div>
                     </div>
@@ -287,7 +287,7 @@
                     <div class="single-fun">
                         <i class="bi bi-shield-lock"></i>
                         <div class="content">
-                            <!-- <span class="counter">4379</span> -->
+                            <span class="counter" data-count="4379"></span>
                             <p>Sécurité renforcée</p>
                         </div>
                     </div>
@@ -298,7 +298,7 @@
                     <div class="single-fun">
                         <i class="bi bi-lightning-charge"></i>
                         <div class="content">
-                            <!-- <span class="counter">32</span> -->
+                            <span class="counter" data-count="32"></span>
                             <p>Transfert instantané</p>
                         </div>
                     </div>
@@ -700,61 +700,84 @@
     </section>
 
     <!-- Footer enrichi -->
-    <footer class="footer-section bg-dark text-white pt-5 pb-3 mt-5">
-        <div class="container">
-        <div class="row mb-4">
-            <!-- Bloc 1 : À propos -->
-            <div class="col-md-3 mb-4 mb-md-0">
-                <div class="footer-title">À propos d'AWDPay</div>
-                <img src="assets/images/logo/logo.awdpay.png" alt="AWDPay Logo" style="height:40px;">
-                <p class="mt-3">AWDPay est la solution panafricaine pour des paiements digitaux rapides, sécurisés et accessibles à tous. Notre mission : simplifier la finance pour tous.</p>
-                <a href="https://www.awdpay.com/register" class="cta-main">Commencer</a>
-            </div>
-            <!-- Bloc 2 : Liens utiles -->
-            <div class="col-md-3 mb-4 mb-md-0">
-                <div class="footer-title">Nos Services</div>
-                <ul class="footer-list list-unstyled">
-                    <li><a href="#" class="text-white-50 text-decoration-none">Accueil</a></li>
-                    <li><a href="#services" class="text-white-50 text-decoration-none">Services</a></li>
-                    <li><a href="#tarifs" class="text-white-50 text-decoration-none">Tarifs</a></li>
-                    <li><a href="#vision-mission" class="text-white-50 text-decoration-none">Vision & Mission</a></li>
-                    <li><a href="#contact" class="text-white-50 text-decoration-none">Contact</a></li>
-                </ul>
-            </div>
-            <!-- Bloc 3 : Services offers -->
-            <div class="col-md-3 mb-4 mb-md-0">
-                <div class="footer-title">Notre Fintech</div>
-                <ul class="footer-list list-unstyled">
-                    <li><a href="#" class="text-white-50 text-decoration-none">Transferts Instantanés</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Espace Marchand</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Programme de Parrainage</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Paiements Internationaux</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Transactions Rapides</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Sécurité Maximale</a></li>
-                </ul>
-            </div>
-            <!-- Bloc 4 : Contact -->
-            <div class="col-md-3">
-                <div class="footer-title">Contact Rapide</div>
-                <ul class="footer-list list-unstyled">
-                    <li><i class="fas fa-envelope me-2"></i> <a href="mailto:contact@awdpay.com">contact@awdpay.com</a></li>
-                    <li><i class="fas fa-phone-alt me-2"></i> <a href="tel:+237XXXYYYZZZ">+237 XXX YYY ZZZ</a></li>
-                    <li><i class="fas fa-map-marker-alt me-2"></i> Rue Équinoxe, Akwa, Douala</li>
-                </ul>
+    <footer class="footer-section bg-dark text-white">
+        <div class="container pt-5">
+            <div class="row g-4">
+                <!-- Bloc 1 : Branding -->
+                <div class="col-lg-4">
+                    <div class="footer-brand mb-4">
+                        <img src="assets/images/logo/logo.awdpay.png" alt="AWDPay Logo" class="footer-logo mb-3">
+                        <p class="footer-about">Solution panafricaine de paiements digitaux sécurisés et accessibles à tous.</p>
+                        
+                        <div class="trust-badges mb-4">
+                            <span class="badge"><i class="fas fa-shield-alt me-1"></i> PCI DSS</span>
+                            <span class="badge"><i class="fas fa-users me-1"></i> 100K+ Utilisateurs</span>
+                        </div>
+                        
+                        <button class="btn btn-download mb-3">
+                            <i class="fab fa-google-play me-2"></i> Télécharger l'App
+                        </button>
+                    </div>
+                </div>
                 
-                <div class="social-icons mt-3">
-                    <a href="https://www.facebook.com/awdpay" target="_blank"><i class="bi bi-facebook"></i></a>
-                    <a href="https://twitter.com/awdpay" target="_blank"><i class="bi bi-twitter"></i></a>
-                    <a href="https://www.linkedin.com/company/awdpay" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <!-- Bloc 2 : Navigation -->
+                <div class="col-sm-6 col-lg-2">
+                    <h5 class="footer-title">Navigation</h5>
+                    <ul class="footer-nav list-unstyled">
+                        <li><a href="#"><i class="fas fa-chevron-right me-2"></i> Accueil</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right me-2"></i> Services</a></li>
+                        <li><a href="#tarifs"><i class="fas fa-chevron-right me-2"></i> Tarifs</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right me-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Bloc 3 : Services -->
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Nos Solutions</h5>
+                    <ul class="footer-services list-unstyled">
+                        <li><a href="#"><i class="fas fa-exchange-alt me-2"></i> Transferts Instantanés</a></li>
+                        <li><a href="#"><i class="fas fa-store me-2"></i> Espace Marchand</a></li>
+                        <li><a href="#"><i class="fas fa-gift me-2"></i> Programme Parrainage</a></li>
+                        <li><a href="#"><i class="fas fa-globe-africa me-2"></i> Paiements Internationaux</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Bloc 4 : Contact -->
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Nous Contacter</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li><i class="fas fa-envelope me-3"></i> <a href="mailto:contact@awdpay.com">contact@awdpay.com</a></li>
+                        <li><i class="fas fa-phone-alt me-3"></i> <a href="tel:+237XXXYYYZZZ">+237 XXX YYY ZZZ</a></li>
+                        <li><i class="fas fa-map-marker-alt me-3"></i> Rue Équinoxe, Akwa, Douala</li>
+                    </ul>
+                    
+                    <div class="newsletter mt-4">
+                        <h6 class="mb-3">Abonnez-vous à notre newsletter</h6>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Votre email">
+                            <button class="btn btn-subscribe" type="button">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <hr>
-                <small class="text-white-50">AWDPay &copy; 2025 Tous droits réservés.</small>
+            
+            <div class="footer-bottom mt-5 pt-4 pb-4 border-top border-white-10">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0 small">© 2025 AWDPay. Tous droits réservés. <a href="#" class="text-white-50">CGU</a> | <a href="#" class="text-white-50">Politique de confidentialité</a></p>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </footer>
     <!-- Bootstrap JS -->

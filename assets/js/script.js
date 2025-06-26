@@ -1,20 +1,21 @@
-// Simulateur de frais AWD Pay
-const amountInput = document.getElementById('amount');
-const feeResult = document.getElementById('fee-result');
 
-function calculateFee(amount) {
-  // Exemple : 2% de frais, minimum 200 XAF
-  const fee = Math.max(Math.round(amount * 0.02), 200);
-  return fee;
-}
-
-function updateFee() {
-  const amount = parseInt(amountInput.value, 10) || 0;
-  const fee = calculateFee(amount);
-  feeResult.textContent = `→ ${fee} XAF`;
-}
-
-amountInput.addEventListener('input', updateFee);
+// Dynamique : simulateur de frais en temps réel
+(function() {
+  var amountInput = document.getElementById('amount');
+  var feeResult = document.getElementById('fee-result');
+  if (!amountInput || !feeResult) return;
+  function calculateFee(amount) {
+    var fee = Math.max(Math.round(amount * 0.02), 200);
+    return fee;
+  }
+  function updateFee() {
+    var amount = parseInt(amountInput.value, 10) || 0;
+    var fee = calculateFee(amount);
+    feeResult.textContent = 'Frais : ' + fee + ' XAF';
+  }
+  amountInput.addEventListener('input', updateFee);
+  updateFee();
+})();
 
 // Animation bouton demo (micro-interaction)
 document.querySelector('.cta-demo').addEventListener('mouseenter', e => {
@@ -26,109 +27,24 @@ document.querySelector('.cta-demo').addEventListener('mouseleave', e => {
 
 // Responsive menu
 // ...
-// Ajout d'animations sur les cards services (inspiration Flutterwave)
+// Ajout d'animations sur les cards services
 document.querySelectorAll('.service-card').forEach((card, i) => {
   card.classList.add('animate__animated', 'animate__fadeInUp');
   card.style.setProperty('animation-delay', `${i * 0.1}s`);
 });
 
-// Animation et interaction pour la vision/mission stack
-const visionCards = document.querySelectorAll('.vision-card-stack .vision-card');
-let activeIndex = 0;
-
-function updateVisionStack(idx) {
-  visionCards.forEach((card, i) => {
-    card.classList.remove('active');
-    card.classList.remove('card-1', 'card-2', 'card-3');
-    if (i === idx) card.classList.add('active', 'card-1');
-    else if (i === (idx + 1) % 3) card.classList.add('card-2');
-    else card.classList.add('card-3');
-  });
-}
-
-visionCards.forEach((card, i) => {
-  card.addEventListener('mouseenter', () => {
-    if (i !== activeIndex) {
-      activeIndex = i;
-      updateVisionStack(activeIndex);
-    }
-  });
-});
-
-updateVisionStack(activeIndex);
-
-// Navbar sticky background on scroll
-window.addEventListener('scroll', function() {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
-
-// Animation des cards de la vision/mission
-// Effet 3D au survol et animation automatique du stack
-document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.vision-card');
-    
-    // Effet 3D au survol
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(1.05)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            if(!card.classList.contains('active')) {
-                card.style.transform = 'rotateY(0) rotateX(0)';
-            }
-        });
-    });
-    
-    // Animation automatique du stack
-    let current = 0;
-    setInterval(() => {
-        cards[current].classList.remove('active');
-        current = (current + 1) % cards.length;
-        cards[current].classList.add('active');
-        
-        // Réorganisation du stack
-        cards.forEach((card, index) => {
-            if(index < current) {
-                card.style.transform = `rotateY(10deg) translateX(-${80 - (index * 40)}px)`;
-            } else if(index > current) {
-                card.style.transform = `rotateY(10deg) translateX(${80 - ((cards.length - 1 - index) * 40)}px)`;
-            } else {
-                card.style.transform = 'rotateY(0) scale(1.05)';
-            }
-        });
-    }, 5000);
-});
-
-
 // Contact part
 document.addEventListener('DOMContentLoaded', function() {
-    // Animation des champs au focus
-    const inputs = document.querySelectorAll('.form-control, .form-select');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.parentElement.classList.add('animate__animated', 'animate__pulse');
-        });
-        input.addEventListener('blur', function() {
-            this.parentElement.classList.remove('animate__animated', 'animate__pulse');
-        });
-    });
-    
-    // Validation en temps réel
-    document.querySelector('form').addEventListener('submit', function(e) {
-        const email = document.getElementById('email').value;
-        if (!email.includes('@')) {
-            e.preventDefault();
-            alert('Veuillez entrer une adresse email valide');
-        }
-    });
+  // Animation des champs au focus
+  const inputs = document.querySelectorAll('.form-control, .form-select');
+  inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+          this.parentElement.classList.add('animate__animated', 'animate__pulse');
+      });
+      input.addEventListener('blur', function() {
+          this.parentElement.classList.remove('animate__animated', 'animate__pulse');
+      });
+  });
 });
 
 // Animation au scroll
@@ -157,3 +73,144 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
 });
+
+// Validation dynamique du formulaire de contact
+(function() {
+  var form = document.querySelector('.form-body form');
+  if (!form) return;
+  var firstName = form.querySelector('#firstName');
+  var lastName = form.querySelector('#lastName');
+  var email = form.querySelector('#email');
+  var phone = form.querySelector('#phone');
+
+  // Création du message d'erreur
+  var errorMsg = document.createElement('div');
+  errorMsg.className = 'alert alert-danger py-2 px-3 mb-3 animate__animated';
+  errorMsg.style.display = 'none';
+  errorMsg.setAttribute('role', 'alert');
+  form.insertBefore(errorMsg, form.firstChild);
+
+  // Création du message de succès
+  var successMsg = document.createElement('div');
+  successMsg.className = 'alert alert-success py-2 px-3 mb-3 animate__animated';
+  successMsg.style.display = 'none';
+  successMsg.setAttribute('role', 'alert');
+  form.insertBefore(successMsg, form.firstChild);
+
+  function hideError() {
+    errorMsg.style.display = 'none';
+    errorMsg.classList.remove('animate__fadeInDown');
+  }
+  function hideSuccess() {
+    successMsg.style.display = 'none';
+    successMsg.classList.remove('animate__fadeInDown');
+  }
+
+  [firstName, lastName, email, phone].forEach(function(input) {
+    input.addEventListener('input', hideError);
+  });
+
+  form.addEventListener('submit', function(e) {
+    var errors = [];
+    if (!firstName.value.trim()) errors.push('Le prénom est requis.');
+    if (!lastName.value.trim()) errors.push('Le nom est requis.');
+    if (!email.value.trim()) errors.push('L\'email est requis.');
+    // Email format simple
+    if (email.value && !/^\S+@\S+\.\S+$/.test(email.value)) errors.push('L\'email n\'est pas valide.');
+    if (!phone.value.trim()) errors.push('Le numéro de téléphone est requis.');
+    if (errors.length > 0) {
+      e.preventDefault();
+      errorMsg.innerHTML = errors.join('<br>');
+      errorMsg.style.display = 'block';
+      errorMsg.classList.add('animate__fadeInDown');
+      setTimeout(hideError, 5000);
+      hideSuccess();
+      return false;
+    }
+    // Succès (mode démo)
+    e.preventDefault();
+    hideError();
+    successMsg.innerHTML = 'Votre message a bien été envoyé. Merci de nous avoir contactés !';
+    successMsg.style.display = 'block';
+    successMsg.classList.add('animate__fadeInDown');
+    setTimeout(hideSuccess, 5000);
+    form.reset();
+    return false;
+  });
+})();
+
+// Dynamique : scroll smooth pour les ancres internes
+(function() {
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+// Dynamique : animation des chiffres (fun-facts)
+(function() {
+  var funFacts = document.querySelectorAll('.single-fun .counter');
+  if (!funFacts.length) return;
+  function animateCounter(el, to) {
+    var start = 0;
+    var duration = 1200;
+    var startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      el.textContent = Math.floor(progress * to);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = to;
+    }
+    requestAnimationFrame(step);
+  }
+  funFacts.forEach(function(el) {
+    var to = parseInt(el.getAttribute('data-count'), 10) || 0;
+    animateCounter(el, to);
+  });
+})();
+
+// Dynamique : effet sticky + background navbar au scroll
+window.addEventListener('scroll', function() {
+  var navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Dynamique : vision-card-stack animation (écartement au hover)
+(function() {
+  var stack = document.querySelector('.vision-card-stack');
+  if (!stack) return;
+  var cards = stack.querySelectorAll('.vision-card');
+  cards.forEach(function(card, idx) {
+    card.addEventListener('mouseenter', function() {
+      cards.forEach(function(c, i) {
+        if (c === card) {
+          c.style.transform = 'translateY(-10px) scale(1.04)';
+          c.style.zIndex = 10;
+        } else if (i < idx) {
+          c.style.transform = 'translateX(-60px)';
+          c.style.zIndex = 5 - i;
+        } else if (i > idx) {
+          c.style.transform = 'translateX(60px)';
+          c.style.zIndex = 5 - i;
+        }
+      });
+    });
+    card.addEventListener('mouseleave', function() {
+      cards.forEach(function(c) {
+        c.style.transform = '';
+        c.style.zIndex = '';
+      });
+    });
+  });
+})();
