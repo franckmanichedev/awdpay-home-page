@@ -11,7 +11,7 @@ function calculateFee(amount) {
 function updateFee() {
   const amount = parseInt(amountInput.value, 10) || 0;
   const fee = calculateFee(amount);
-  feeResult.textContent = `→ ${fee} XAF de frais`;
+  feeResult.textContent = `→ ${fee} XAF`;
 }
 
 amountInput.addEventListener('input', updateFee);
@@ -24,7 +24,7 @@ document.querySelector('.cta-demo').addEventListener('mouseleave', e => {
   e.target.style.boxShadow = '';
 });
 
-// Responsive menu (optionnel, à améliorer si besoin)
+// Responsive menu
 // ...
 // Ajout d'animations sur les cards services (inspiration Flutterwave)
 document.querySelectorAll('.service-card').forEach((card, i) => {
@@ -67,13 +67,93 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Vision/Mission cards interaction (hover/active)
-(function() {
-  var visionCards = document.querySelectorAll('.vision-card');
-  visionCards.forEach(function(card) {
-    card.addEventListener('mouseenter', function() {
-      visionCards.forEach(function(c) { c.classList.remove('active'); });
-      card.classList.add('active');
+// Animation des cards de la vision/mission
+// Effet 3D au survol et animation automatique du stack
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.vision-card');
+    
+    // Effet 3D au survol
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(1.05)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            if(!card.classList.contains('active')) {
+                card.style.transform = 'rotateY(0) rotateX(0)';
+            }
+        });
     });
-  });
-})();
+    
+    // Animation automatique du stack
+    let current = 0;
+    setInterval(() => {
+        cards[current].classList.remove('active');
+        current = (current + 1) % cards.length;
+        cards[current].classList.add('active');
+        
+        // Réorganisation du stack
+        cards.forEach((card, index) => {
+            if(index < current) {
+                card.style.transform = `rotateY(10deg) translateX(-${80 - (index * 40)}px)`;
+            } else if(index > current) {
+                card.style.transform = `rotateY(10deg) translateX(${80 - ((cards.length - 1 - index) * 40)}px)`;
+            } else {
+                card.style.transform = 'rotateY(0) scale(1.05)';
+            }
+        });
+    }, 5000);
+});
+
+
+// Contact part
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation des champs au focus
+    const inputs = document.querySelectorAll('.form-control, .form-select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('animate__animated', 'animate__pulse');
+        });
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('animate__animated', 'animate__pulse');
+        });
+    });
+    
+    // Validation en temps réel
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const email = document.getElementById('email').value;
+        if (!email.includes('@')) {
+            e.preventDefault();
+            alert('Veuillez entrer une adresse email valide');
+        }
+    });
+});
+
+// Animation au scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    const animateOnScroll = () => {
+        serviceCards.forEach(card => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if(cardPosition < screenPosition) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    // Initial state for animation
+    serviceCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(35px)';
+        card.style.transition = 'opacity 0.5s ease, transform 1.5s ease';
+    });
+    
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+});

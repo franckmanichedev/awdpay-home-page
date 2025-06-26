@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AWD Pay – Paiements et transferts instantanés en Afrique</title>
+  <title>AWDPay – Paiements et transferts instantanés en Afrique</title>
   <!-- Bootstrap CSS and ICONS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <header class="hero">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand logo" href="#"><img src="assets/images/logo/logo.awdpay.png" alt="AWD Pay Logo" style="height:36px;vertical-align:middle;"> AWD Pay</a>
-                <button class="navbar-toggler orange-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand logo" href="#">
+                    <img src="assets/images/logo/logo.awdpay.png" alt="AWDPay Logo" style="height:36px">
+                </a>
+                <button class="navbar-toggler orange-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -25,85 +32,222 @@
                         <li class="nav-item"><a class="nav-link" href="#tarifs">Tarifs</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
-                    <a href="https://www.awdpay.com/register" class="btn cta-nav ms-lg-3">Ouvrir un compte</a>
+                    <a href="https://www.awdpay.com/register" class="btn cta-nav ms-lg-3">
+                        Ouvrir un compte
+                    </a>
                 </div>
             </div>
         </nav>
+
         <div class="container">
-            <div class="row align-items-center g-0 flex-lg-row flex-column-reverse hero-content">
+            <div class="row align-items-center g-0 flex-lg-row flex-column hero-content">
                 <div class="col-lg-6 col-12 text-lg-start text-center d-flex flex-column justify-content-center align-items-lg-start align-items-center">
-                    <h1 class="mb-3 fw-bold">Effectuez vos transactions facilement, à moindre coût et en toute sécurité.</h1>
-                    <p class="subtitle mb-3">AWDpay se spécialise dans l’agrégation de moyens de paiement en ligne. Plateforme centralisée, accessible à tous, partout dans le monde.</p>
-                    <div class="cta-group mb-3 d-flex flex-wrap justify-content-lg-start justify-content-center gap-2">
-                        <a href="https://www.awdpay.com/register" class="cta-main">Commencer</a>
-                        <button class="cta-demo">Voir la démo</button>
+                    <div class="trust-badge mb-4 animate__animated animate__fadeIn">
+                        <span class="badge">Solution certifiée PCI DSS</span>
+                        <span class="badge">100 000+ utilisateurs</span>
                     </div>
-                    <div class="trust-signals mb-3 d-flex flex-wrap align-items-center gap-2">
-                        <span class="badge">Certifié PCI DSS</span>
-                        <span class="badge founded">Fondée en 2020</span>
-                        <span class="partners d-flex align-items-center">
-                        <img src="assets/images/mtn-logo-png_seeklogo-503277.png" alt="MTN"/>
-                        <img src="assets/images/orange-logo-png_seeklogo-168289.png" alt="Orange"/>
-                        </span>
-                        <span class="stats">100 000+ utilisateurs</span>
+                    
+                    <h1 class="mb-4 fw-bold">Paiements digitaux sans frontières</h1>
+                    <p class="subtitle mb-4">Plateforme africaine leader pour les transactions sécurisées à moindre coût</p>
+                    
+                    <div class="hero-highlights mb-4">
+                        <span class="highlight"><i class="fas fa-check-circle text-warning"></i> Sans frais cachés</span>
+                        <span class="highlight"><i class="fas fa-bolt text-warning"></i> Transactions instantanées</span>
+                    </div>
+                    
+                    <div class="cta-group mb-4 d-flex flex-wrap justify-content-lg-start justify-content-center gap-2">
+                        <a href="https://www.awdpay.com/register" class="cta-main">Commencer</a>
+                        <button class="cta-demo" data-bs-toggle="modal" data-bs-target="#demoModal">
+                            <i class="fas fa-play-circle me-2"></i>Voir la démo
+                        </button>
+                    </div>
+                    
+                    <div class="partners-logos mt-3">
+                        <span class="d-inline-block me-3">Partenaires :</span>
+                        <img src="assets/images/logo/mtn.png" alt="MTN" width="60">
+                        <img src="assets/images/logo/orange.png" alt="Orange" width="70" class="ms-2">
                     </div>
                 </div>
-                <div class="col-lg-6 col-12 d-flex flex-column align-items-lg-start align-items-center mb-4 mb-lg-0">
-                    <div class="transaction-animation mb-3 w-100">
-                        <img src="https://www.awdpay.com/api/public/image-1642629810706-811855613.png" alt="AWD Hero" class="hero-img"/>
+                
+                <div class="col-lg-6 col-12 d-flex flex-column align-items-center mb-4 mb-lg-0">
+                    <div class="transaction-animation mb-3">
+                        <img src="assets/images/E-Wallet-amico.png" alt="AWD Hero" class="hero-img"/>
                         <div class="money-transfer">
-                        <span class="circle sender"></span>
-                        <span class="arrow"></span>
-                        <span class="circle receiver"></span>
+                            <span class="circle sender"></span>
+                            <span class="arrow"></span>
+                            <span class="circle receiver"></span>
                         </div>
                     </div>
-                    <div class="simulator w-100">
-                        <label for="amount">Simulateur de frais :</label>
-                        <input type="number" id="amount" min="1" value="10000" />
-                        <span class="result" id="fee-result"> 200 XAF</span>
+                    
+                    <div class="simulator">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-calculator me-2"></i>
+                            <span>Simulateur de frais :</span>
+                        </div>
+                        <div class="input-group">
+                            <input type="number" id="amount" min="1" value="10000" class="form-control">
+                            <span class="input-group-text">XAF</span>
+                            <span class="input-group-text result" id="fee-result">Frais : 200 XAF</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Section Services AWD Pay -->
-    <section id="services" class="services-section py-5 bg-white">
+    <!-- Section Services -->
+    <section id="services" class="services-section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services Financiers</h2>
+                <div class="divider"></div>
+                <p class="lead">Des solutions digitales conçues pour simplifier vos transactions</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3 class="service-title">Transferts Instantanés</h3>
+                        <p class="service-description">
+                            Envoyez ou recevez de l'argent en quelques secondes vers n'importe quel numéro AWDPay, 24h/24 et 7j/7, sans frais cachés.
+                        </p>
+                        <a href="#" class="service-link">
+                            Découvrir <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3 class="service-title">Espace Marchand</h3>
+                        <p class="service-description">
+                            Acceptez les paiements QR et en ligne avec des frais compétitifs. Gérez vos transactions depuis un dashboard intuitif.
+                        </p>
+                        <a href="#" class="service-link">
+                            Devenir marchand <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3 class="service-title">Programme de Parrainage</h3>
+                        <p class="service-description">
+                            Partagez votre lien et gagnez 1000 XAF par ami inscrit. Votre ami reçoit 500 XAF dès son premier transfert !
+                        </p>
+                        <a href="#" class="service-link">
+                            Parrainer <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe-africa"></i>
+                        </div>
+                        <h3 class="service-title">Paiements Internationaux</h3>
+                        <p class="service-description">
+                            Vendez à l'international et laissez vos clients payer à sa manière : mobiles money, les cartes de crédit et de débit.
+                        </p>
+                        <a href="#" class="service-link">
+                            En savoir plus <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="service-title">Transactions Rapides</h3>
+                        <p class="service-description">
+                            Une interface épurée pour envoyer de l'argent en 3 clics. Simple, intuitif et sécurisé pour tous vos besoins.
+                        </p>
+                        <a href="#" class="service-link">
+                            Essayer maintenant <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="service-title">Sécurité Maximale</h3>
+                        <p class="service-description">
+                            Toutes vos transactions sont protégées par un cryptage bancaire de niveau militaire et une authentification à 2 facteurs.
+                        </p>
+                        <a href="#" class="service-link">
+                            Notre sécurité <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services AWDPay -->
+    <section class="services-section py-5">
         <div class="container">
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="fw-bold mb-3">Des possibilités de paiement infinies pour chaque individu</h2>
-                    <p class="lead">AWD Pay propose une série de services intégrés pour particuliers et professionnels, garantissant des transactions fluides et une gestion efficace de votre argent.</p>
+                    <p class="lead">AWDPay propose une série de services intégrés pour particuliers et professionnels, garantissant des transactions fluides et une gestion efficace de votre argent.</p>
                 </div>
                 <div class="col-lg-6 text-center">
                     <img src="assets/images/logo/logo.awdpay.png" alt="AWD Services" class="img-fluid service-hero-anim">
                 </div>
             </div>
             <div class="row g-4 service-cards">
+                <!-- Dépôt -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card h-100 text-center p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp">
-                        <img src="assets/images/ser-depot.png" alt="Dépôt" class="mb-3" style="height:48px;">
+                        <i class="bi bi-wallet2 text-primary mb-3" style="font-size: 2.5rem;"></i>
                         <h5 class="fw-bold mb-2">Dépôt</h5>
                         <p class="mb-0">Déposez de l’argent sur votre compte et faites tous vos achats en ligne chez nos partenaires.</p>
                     </div>
                 </div>
+                
+                <!-- Tarifs -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card h-100 text-center p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp" style="animation-delay:0.1s;">
-                        <img src="assets/images/ser-tarif.png" alt="Tarifs" class="mb-3" style="height:48px;">
+                        <i class="bi bi-tags text-success mb-3" style="font-size: 2.5rem;"></i>
                         <h5 class="fw-bold mb-2">Tarifs</h5>
                         <p class="mb-0">Pas de frais mensuels. Frais de transactions à partir de 2%.</p>
                     </div>
                 </div>
+                
+                <!-- Collecte -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card h-100 text-center p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp" style="animation-delay:0.2s;">
-                        <img src="assets/images/ser-collecte.png" alt="Collecte de fonds" class="mb-3" style="height:48px;">
+                        <i class="bi bi-cash-stack text-warning mb-3" style="font-size: 2.5rem;"></i>
                         <h5 class="fw-bold mb-2">Collecte de fonds</h5>
                         <p class="mb-0">Collectez des paiements auprès de vos clients à l’échelle mondiale, avec réversion rapide.</p>
                     </div>
                 </div>
+                
+                <!-- Transfert -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card h-100 text-center p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp" style="animation-delay:0.3s;">
-                        <img src="assets/images/ser-transfert.png" alt="Transfert" class="mb-3" style="height:48px;">
+                        <i class="bi bi-lightning-charge text-danger mb-3" style="font-size: 2.5rem;"></i>
                         <h5 class="fw-bold mb-2">Transfert instantané</h5>
                         <p class="mb-0">Transférez facilement de l’argent à un utilisateur en 0.001 seconde.</p>
                     </div>
@@ -112,7 +256,7 @@
         </div>
     </section>
 
-    <!-- Section Funfacts AWD Pay -->
+    <!-- Section Funfacts AWDPay -->
     <div id="fun-facts" class="fun-facts section overlay">
         <div class="container">
             <div class="row">
@@ -164,27 +308,384 @@
         </div>
     </div>
 
-    <!-- Section Vision/Mission/Produit AWD Pay -->
+    <!-- Section Vision/Mission/Produit AWDPay -->
     <section id="vision-mission" class="py-5 bg-light position-relative">
         <div class="container position-relative">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h2 class="fw-bold text-center mb-4">Notre Vision & Mission</h2>
-                <div class="vision-card-stack position-relative">
-                    <div class="vision-card card-1 active">
-                        <span class="icon"><i class="bi bi-globe2"></i></span>
-                        <h4 class="fw-bold mb-2">Rendre les paiements en ligne accessibles à tous, partout dans le monde.</h4>
-                        <p class="mb-0">Notre vision première est de démocratiser l’accès aux paiements digitaux, pour tous les particuliers et professionnels d’Afrique et d’ailleurs.</p>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class="fw-bold text-center mb-4 display-5">Notre Vision & Mission</h2>
+                    <p class="text-center text-muted lead mb-5">Découvrez les fondements qui guident notre action quotidienne</p>
+                    
+                    <div class="vision-card-stack position-relative">
+                        <div class="vision-card">
+                            <span class="icon"><i class="bi bi-rocket-takeoff"></i></span>
+                            <h4 class="fw-bold mb-2">Notre mission quotidienne</h4>
+                            <p class="mb-0">Faciliter chaque opération financière grâce à une plateforme rapide, intuitive et sécurisée, tout en offrant des frais défiant toute concurrence.</p>
+                        </div>
+                        <div class="vision-card">
+                            <span class="icon"><i class="bi bi-globe2"></i></span>
+                            <h4 class="fw-bold mb-2">Rendre les paiements en ligne accessibles à tous</h4>
+                            <p class="mb-0">Notre vision est de démocratiser l'accès aux paiements digitaux pour tous les particuliers et professionnels d'Afrique et au-delà, en brisant les barrières technologiques et financières.</p>
+                        </div>
+                        <div class="vision-card">
+                            <span class="icon"><i class="bi bi-credit-card-2-front"></i></span>
+                            <h4 class="fw-bold mb-2">Alternative innovante</h4>
+                            <p class="mb-0">AWDPay se positionne comme la solution de paiement nouvelle génération, combinant la simplicité du mobile money avec la puissance des transactions digitales sécurisées.</p>
+                        </div>
                     </div>
-                    <div class="vision-card card-2">
-                        <span class="icon"><i class="bi bi-credit-card-2-front"></i></span>
-                        <h4 class="fw-bold mb-2">Une alternative aux paiements classiques</h4>
-                        <p class="mb-0">AWD Pay agit comme une alternative aux paiements par mobile ou carte bancaire, pour le e-commerce et d’autres usages commerciaux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foire aux question -->
+    <section class="faq">
+        <div class="container py-5">
+            <div class="row">
+                <!-- Contact From -->
+                <div class="col-md-6">
+                    <div class="form-container">
+                        <!-- En-tête du formulaire -->
+                        <div class="form-header">
+                            <h2><i class="fas fa-paper-plane me-2"></i>Contactez AWDPay</h2>
+                            <p>Notre équipe vous répondra dans les 24 heures</p>
+                        </div>
+                        
+                        <!-- Corps du formulaire -->
+                        <div class="form-body">
+                            <form>
+                                <!-- Section Informations Personnelles -->
+                                <h5 class="mb-4 text-awd-primary fw-bold"><i class="fas fa-user-circle me-2"></i>Informations Personnelles</h5>
+                                
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="firstName" placeholder="Prénom">
+                                            <label for="firstName">Prénom*</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lastName" placeholder="Nom">
+                                            <label for="lastName">Nom*</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <label for="email">Adresse Email*</label>
+                                        <small class="text-muted">Nous ne partagerons jamais votre email</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                        <div class="form-floating flex-grow-1">
+                                            <input type="tel" class="form-control" id="phone" placeholder="Téléphone">
+                                            <label for="phone">Numéro de Téléphone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Bouton Soumettre -->
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-awd btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Envoyer le Message
+                                    </button>
+                                </div>
+                                    
+                                    <!-- Divider Optionnel pour Connexion Sociale -->
+                                    <div class="divider">OU</div>
+                                    
+                                    <div class="row g-2">
+                                        <div class="col-md-6">
+                                            <button type="button" class="social-btn google w-100">
+                                                <i class="fab fa-google"></i>Continuer avec Google
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="button" class="social-btn linkedin w-100">
+                                                <i class="fab fa-linkedin-in"></i>Continuer avec LinkedIn
+                                            </button>
+                                        </div>
+                                    </div>
+                                
+                                <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#details-demande" aria-expanded="false" aria-controls="details-demande">
+                                    <i class="fas fa-chevron-down me-2"></i> Ajouter des détails à ma demande
+                                </button>
+
+                                <div class="collapse" id="details-demande">
+                                    <!-- Section Sujet -->
+                                    <h5 class="mb-4 text-awd-primary fw-bold mt-5"><i class="fas fa-tag me-2"></i>Détails de la Demande</h5>
+                                    
+                                    <div class="mb-4">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="subject">
+                                                <option selected disabled>Sélectionnez un sujet</option>
+                                                <option value="support">Support Technique</option>
+                                                <option value="partnership">Partenariat Commercial</option>
+                                                <option value="career">Opportunités de Carrière</option>
+                                                <option value="other">Autre</option>
+                                            </select>
+                                            <label for="subject">Sujet*</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Votre message" id="message" style="height: 150px"></textarea>
+                                            <label for="message">Votre Message*</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Section Pièce Jointe -->
+                                    <div class="mb-4">
+                                        <label for="attachment" class="form-label fw-bold"><i class="fas fa-paperclip me-2"></i>Pièce Jointe (Optionnel)</label>
+                                        <div class="file-upload-wrapper">
+                                            <input type="file" class="form-control" id="attachment">
+                                            <small class="text-muted">Formats acceptés : .pdf, .jpg, .png (max. 5MB)</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Checkbox Consentement -->
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" id="consent">
+                                        <label class="form-check-label" for="consent">
+                                            J'accepte que mes informations soient utilisées pour répondre à ma demande et j'ai pris connaissance de la <a href="#" class="text-decoration-none">Politique de Confidentialité</a>.
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="vision-card card-3">
-                        <span class="icon"><i class="bi bi-rocket-takeoff"></i></span>
-                        <h4 class="fw-bold mb-2">Notre mission</h4>
-                        <p class="mb-0">Faciliter les opérations financières en ligne en offrant un service rapide, sécurisé et défiant toute concurrence.</p>
+                </div>
+                <!-- Foirs Aux Questions -->
+                <div class="col-md-6">
+                    <div class="faq-header p-4 mb-5 text-center">
+                        <h1 class="display-5 fw-bold"><i class="fas fa-question-circle me-2"></i>FAQ AWDPay</h1>
+                        <p class="lead mb-0">Trouvez rapidement des réponses à vos questions</p>
+                    </div>
+                    <div class="accordion" id="faqAccordion">
+                        <!-- Question 1 -->
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <i class="fas fa-wallet text-primary me-2"></i> Comment créer un compte AWDPay ?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Créer un compte est simple et rapide :</p>
+                                    <ol>
+                                        <li>Rendez-vous sur notre site web</li>
+                                        <li>Cliquez sur "S'inscrire"</li>
+                                        <li>Remplissez vos informations personnelles</li>
+                                        <li>Validez votre numéro de téléphone via SMS ou votre carte de credit</li>
+                                        <li>Effectuez un premier dépôt pour activer votre compte</li>
+                                    </ol>
+                                    <span class="badge badge-awd rounded-pill">Nouveau</span> <small>L'inscription prend moins de 5 minutes</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-exchange-alt text-primary me-2"></i> Quels sont les frais pour les transferts ?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Type de transfert</th>
+                                                    <th>Frais</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Entre comptes AWDPay</td>
+                                                    <td class="text-success">Gratuit</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Vers Mobile Money (MTN, Orange...)</td>
+                                                    <td>2% (min. 2000 XAF)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Transferts internationaux</td>
+                                                    <td>2% + frais correspondants</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 3 -->
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="fas fa-shield-alt text-primary me-2"></i> Comment AWDPay protège mes transactions ?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <i class="fas fa-lock text-success fs-4 me-3"></i>
+                                        <div>
+                                            <h5 class="mb-1">Cryptage bancaire</h5>
+                                            <p class="mb-0">Toutes les transactions sont chiffrées en AES-256</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-3">
+                                        <i class="fas fa-certificate text-warning fs-4 me-3"></i>
+                                        <div>
+                                            <h5 class="mb-1">Certification PCI DSS</h5>
+                                            <p class="mb-0">Norme internationale pour la sécurité des paiements</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-fingerprint text-info fs-4 me-3"></i>
+                                        <div>
+                                            <h5 class="mb-1">Authentification à deux facteurs</h5>
+                                            <p class="mb-0">Option disponible pour toutes les transactions sensibles</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 4 -->
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="fas fa-phone-alt text-primary me-2"></i> Comment contacter le support client ?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <div class="card-body text-center">
+                                                    <i class="fas fa-envelope fa-2x mb-3 text-primary"></i>
+                                                    <h5>Par email</h5>
+                                                    <a href="mailto:support@awdpay.com" class="btn btn-outline-primary mt-2">support@awdpay.com</a>
+                                                    <p class="text-muted small mt-2">Réponse sous 24h</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <div class="card-body text-center">
+                                                    <i class="fas fa-phone-alt fa-2x mb-3 text-primary"></i>
+                                                    <h5>Par téléphone</h5>
+                                                    <a href="tel:+2376XXXXXX" class="btn btn-outline-primary mt-2">+237 6XX XX XX XX</a>
+                                                    <p class="text-muted small mt-2">
+                                                        8h-17h, Lundi-Vendredi<br>
+                                                        9h-12h, Samedi
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 5 -->
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <i class="fas fa-chart-line text-primary me-2"></i> Quelles sont les limites de transaction ?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i> Les limites varient selon le niveau de vérification de votre compte.
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="card mb-3 border-0 shadow-sm">
+                                                <div class="card-header bg-light">
+                                                    <h5 class="mb-0">Compte Standard</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Journalière
+                                                            <span class="badge bg-primary rounded-pill">200 000 XAF</span>
+                                                        </li>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Mensuelle
+                                                            <span class="badge bg-primary rounded-pill">1 000 000 XAF</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card border-0 shadow-sm">
+                                                <div class="card-header bg-light">
+                                                    <h5 class="mb-0">Compte Vérifié</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Journalière
+                                                            <span class="badge bg-success rounded-pill">500 000 XAF</span>
+                                                        </li>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Mensuelle
+                                                            <span class="badge bg-success rounded-pill">5 000 000 XAF</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 -->
+                         <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <i class="fas fa-person text-primary me-2"></i> Comment devenir Agent AWDpay ?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <h5>Envisagez-vous de devenir Agent AWDpay ?</h5>
+                                    <hr>
+                                    <p>Il vous suffit de recharger les comptes AWDpay de nos utilisateurs. En tant qu'Agent, vous aurez un compte regroupant plusieurs moyens en un seul portefeuille, ce qui offre une opportunité unique.</p>
+                                    <small>Rejoignez-nous dès maintenant et profitez d'avantages exceptionnels en tant qu'Agent AWDpay.</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 7 -->
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    <i class="fas fa-question text-primary me-2"></i> Quels est la particularité de AWDPay ?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Vous pouvez effectuer vos Paiements en ligne sans avoir de carte de crédit ni de compte bancaire, notre système vous facilite la tâche. et vous pouvez payer comme vous préférez.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -192,9 +693,9 @@
     </section>
 
     <!-- Appel à l'action avant le footer -->
-    <section class="cta-before-footer my-5">
+    <section class="cta-before-footer my-5 container">
         <h2 class="fw-bold mb-3">Prêt à rejoindre la révolution du paiement digital ?</h2>
-        <p class="lead mb-4">Ouvrez votre compte AWD Pay et profitez d'une expérience de paiement rapide, sécurisée et sans frontières.</p>
+        <p class="lead mb-4">Ouvrez votre compte AWDPay et profitez d'une expérience de paiement rapide, sécurisée et sans frontières.</p>
         <a href="https://www.awdpay.com/register" class="cta-main">Créer mon compte gratuitement</a>
     </section>
 
@@ -203,47 +704,55 @@
         <div class="container">
         <div class="row mb-4">
             <!-- Bloc 1 : À propos -->
-            <div class="col-md-4 mb-4 mb-md-0">
-            <div class="footer-title">À propos d'AWD Pay</div>
-            <img src="assets/images/logo/logo.awdpay.png" alt="AWD Pay Logo" style="height:40px;">
-            <p class="mt-3">AWD Pay est la solution panafricaine pour des paiements digitaux rapides, sécurisés et accessibles à tous. Notre mission : simplifier la finance pour tous.</p>
-            <div class="social-icons mt-3">
-                <a href="https://www.facebook.com/awdpay" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a href="https://twitter.com/awdpay" target="_blank"><i class="bi bi-twitter"></i></a>
-                <a href="https://www.linkedin.com/company/awdpay" target="_blank"><i class="bi bi-linkedin"></i></a>
-            </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="footer-title">À propos d'AWDPay</div>
+                <img src="assets/images/logo/logo.awdpay.png" alt="AWDPay Logo" style="height:40px;">
+                <p class="mt-3">AWDPay est la solution panafricaine pour des paiements digitaux rapides, sécurisés et accessibles à tous. Notre mission : simplifier la finance pour tous.</p>
+                <a href="https://www.awdpay.com/register" class="cta-main">Commencer</a>
             </div>
             <!-- Bloc 2 : Liens utiles -->
-            <div class="col-md-4 mb-4 mb-md-0">
-            <div class="footer-title">Liens utiles</div>
-            <ul class="list-unstyled">
-                <li><a href="#" class="text-white-50 text-decoration-none">Accueil</a></li>
-                <li><a href="#services" class="text-white-50 text-decoration-none">Services</a></li>
-                <li><a href="#tarifs" class="text-white-50 text-decoration-none">Tarifs</a></li>
-                <li><a href="#vision-mission" class="text-white-50 text-decoration-none">Vision & Mission</a></li>
-                <li><a href="#contact" class="text-white-50 text-decoration-none">Contact</a></li>
-            </ul>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="footer-title">Nos Services</div>
+                <ul class="footer-list list-unstyled">
+                    <li><a href="#" class="text-white-50 text-decoration-none">Accueil</a></li>
+                    <li><a href="#services" class="text-white-50 text-decoration-none">Services</a></li>
+                    <li><a href="#tarifs" class="text-white-50 text-decoration-none">Tarifs</a></li>
+                    <li><a href="#vision-mission" class="text-white-50 text-decoration-none">Vision & Mission</a></li>
+                    <li><a href="#contact" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
             </div>
-            <!-- Bloc 3 : Contact -->
-            <div class="col-md-4">
-            <div class="footer-title">Contactez-nous</div>
-            <form class="needs-validation" novalidate>
-                <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Votre nom" required>
+            <!-- Bloc 3 : Services offers -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="footer-title">Notre Fintech</div>
+                <ul class="footer-list list-unstyled">
+                    <li><a href="#" class="text-white-50 text-decoration-none">Transferts Instantanés</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none">Espace Marchand</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none">Programme de Parrainage</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none">Paiements Internationaux</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none">Transactions Rapides</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none">Sécurité Maximale</a></li>
+                </ul>
+            </div>
+            <!-- Bloc 4 : Contact -->
+            <div class="col-md-3">
+                <div class="footer-title">Contact Rapide</div>
+                <ul class="footer-list list-unstyled">
+                    <li><i class="fas fa-envelope me-2"></i> <a href="mailto:contact@awdpay.com">contact@awdpay.com</a></li>
+                    <li><i class="fas fa-phone-alt me-2"></i> <a href="tel:+237XXXYYYZZZ">+237 XXX YYY ZZZ</a></li>
+                    <li><i class="fas fa-map-marker-alt me-2"></i> Rue Équinoxe, Akwa, Douala</li>
+                </ul>
+                
+                <div class="social-icons mt-3">
+                    <a href="https://www.facebook.com/awdpay" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://twitter.com/awdpay" target="_blank"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/awdpay" target="_blank"><i class="bi bi-linkedin"></i></a>
                 </div>
-                <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Votre email" required>
-                </div>
-                <div class="mb-3">
-                <textarea class="form-control" rows="3" placeholder="Votre message" required></textarea>
-                </div>
-                <button type="submit" class="btn w-100">Envoyer</button>
-            </form>
             </div>
         </div>
         <div class="row">
             <div class="col-12 text-center">
-            <small class="text-white-50">&copy; 2025 AWD Pay. Tous droits réservés.</small>
+                <hr>
+                <small class="text-white-50">AWDPay &copy; 2025 Tous droits réservés.</small>
             </div>
         </div>
         </div>
@@ -251,5 +760,23 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <!-- Animation GSAP (optionnel pour des effets plus avancés) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    
+    <!-- Modal Demo -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="demoModalLabel">Démo AWDPay</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body p-0" style="min-height:80vh;">
+                <iframe src="demo.html" frameborder="0" style="width:100%;height:80vh;" id="demoFrame"></iframe>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- filepath: d:\AWDPAY\index.html -->
 </body>
 </html>
